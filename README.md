@@ -4,10 +4,12 @@
 
 ![logoAmazon](https://github.com/user-attachments/assets/933cc50a-efd3-439b-9800-8decc9f5cf65)
 </div>
+<div align="center">
 
 ![Static Badge](https://img.shields.io/badge/licencia%20-%20Amazon%20-%20blue)
 ![Static Badge](https://img.shields.io/badge/versi%C3%B3n%20-%203.24%20-%20green)
 ![Static Badge](https://img.shields.io/badge/%C3%BAltima%20versi%C3%B3n%20-%20febrero%20-%20green)
+</div>
 
 - [Descripción del proyecto](#descripción-del-proyecto)
 
