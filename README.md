@@ -23,6 +23,8 @@
 
 - [Personas contribuyentes](#personas-contribuyentes)
 
+
+
 - [Personas desarrolladoras](#personas-desarrolladoras)
 
 - [Licencia](#licencia)
@@ -32,4 +34,17 @@ Es una tienda web que ofrece una amplia gama de productos, incluyendo libros, el
 
 ## Estado del proyecto
 ![Static Badge](https://img.shields.io/badge/estado-en%20desarrollo-green)
+
+
+## Tecnologías utilizadas
+<a href="https://www.java.com/es/">![fotoJava](https://github.com/user-attachments/assets/4710c7fb-2162-47a7-ba34-3e8353264bc2)
+<a href="https://learn.microsoft.com/es-es/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170">![fotoC++](https://github.com/user-attachments/assets/9deebb9b-a461-42d3-a071-56c02de7eae9)
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript">![fotoJS](https://github.com/user-attachments/assets/a95290db-eb89-4687-818a-bbe3a11d1c17)
+
+
+## Personas contribuyentes
+![readmeServidorContribuyentes](https://github.com/user-attachments/assets/620adc61-d6c3-4087-806f-60d9ea38c479)
+
+
+
 
