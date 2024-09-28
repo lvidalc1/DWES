@@ -36,10 +36,25 @@ Es una tienda web que ofrece una amplia gama de productos, incluyendo libros, el
 ![Static Badge](https://img.shields.io/badge/estado-en%20desarrollo-green)
 
 
+
 ## Tecnologías utilizadas
-<a href="https://www.java.com/es/">![fotoJava](https://github.com/user-attachments/assets/4710c7fb-2162-47a7-ba34-3e8353264bc2)
-<a href="https://learn.microsoft.com/es-es/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170">![fotoC++](https://github.com/user-attachments/assets/9deebb9b-a461-42d3-a071-56c02de7eae9)
-<a href="https://developer.mozilla.org/es/docs/Web/JavaScript">![fotoJS](https://github.com/user-attachments/assets/a95290db-eb89-4687-818a-bbe3a11d1c17)
+
+<a href="https://www.java.com/es/">
+    <img src="https://miro.medium.com/v2/resize:fit:2560/1*2XrX0fP0htyTCah7AglTig.jpeg" alt="fotoJava" width="100"/>
+</a>
+
+<a href="https://learn.microsoft.com/es-es/cpp/cpp/welcome-back-to-cpp-modern-cpp?view=msvc-170">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" alt="fotoC++" width="50"/>
+</a>
+
+<a href="https://developer.mozilla.org/es/docs/Web/JavaScript">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT51BMMUr2H27skg69TPo-ohN15vKM_fFeX0A&s" alt="fotoJS" width="100"/>
+</a>
+
+
+
+
+
 
 
 ## Personas contribuyentes
