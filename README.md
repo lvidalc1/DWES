@@ -1,4 +1,4 @@
-<h1 align="center"> Amazon </h1>
+<h1 align="center">Amazon</h1>
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 </div>
 <div align="center">
 
-![Static Badge](https://img.shields.io/badge/licencia%20-%20Amazon%20-%20blue)
+![Static Badge](https://img.shields.io/badge/licencia%20-%20MIT%20-%20blue)
 ![Static Badge](https://img.shields.io/badge/versi%C3%B3n%20-%203.24%20-%20green)
 ![Static Badge](https://img.shields.io/badge/%C3%BAltima%20versi%C3%B3n%20-%20febrero%20-%20green)
 </div>
@@ -23,20 +23,18 @@
 
 - [Personas contribuyentes](#personas-contribuyentes)
 
-
-
 - [Personas desarrolladoras](#personas-desarrolladoras)
 
 - [Licencia](#licencia)
 
-## Descripción el proyecto
+
+## Descripción del proyecto
+
 Es una tienda web que ofrece una amplia gama de productos, incluyendo libros, electrodomésticos, películas y dispositivos electrónicos. Su misión es ser la compañía que más se centre en el consumidor a nivel mundial, en la que la gente pueda encontrar, descubrir y adquirir cualquier cosa que quiera comprar.
+
 
 ## Estado del proyecto
 ![Static Badge](https://img.shields.io/badge/estado-en%20desarrollo-green)
-
-
-
 
 
 ## Demostración de funciones y aplicaciones
@@ -53,15 +51,12 @@ Amazon ofrece una plataforma global para la compra y venta de productos:
 - **Recomendaciones personalizadas**: Mediante algoritmos basados en el historial.
 - **Reseñas y valoraciones**: Los usuarios pueden leer y escribir reseñas de productos.
 
-#### 2. Amazon Web Services
 
-Esto ofrece una amplia gama de servicios en la nube para empresas y desarrolladores:
+#### 2. Amazon Web Services (AWS)
 
-- **Computación**: Servicios como Amazon EC2 para ejecutar aplicaciones en servidores virtuales.
-- **Almacenamiento**: Amazon S3 ofrece almacenamiento seguro, escalable y duradero en la nube.
-- **Bases de datos**: Servicios como Amazon RDS permiten gestionar bases de datos relacionales en la nube.
-- **Machine Learning**: Herramientas como Amazon SageMaker permiten crear, entrenar y desplegar modelos de aprendizaje automático.
-- **Internet of Things (IoT)**: AWS IoT permite conectar dispositivos a la nube de manera segura.
+<img src="https://www.masip.es/wp-content/uploads/2020/08/aws-logo.png" alt="aws" width="100"/>
+
+AWS ofrece una amplia gama de servicios en la nube para empresas y desarrolladores: computación, almacenamiento, bases de datos, machine learning
 
 #### 3. Amazon Prime
 
@@ -71,17 +66,13 @@ Amazon Prime es un servicio de suscripción que proporciona varios beneficios a 
 - **Prime Video**: Plataforma de streaming con películas, series y contenido original.
 - **Prime Music**: Acceso a millones de canciones sin anuncios.
 - **Prime Reading**: Acceso a una selección de libros electrónicos, revistas y cómics sin costo adicional.
-- **Twitch Prime**: Ventajas exclusivas en la plataforma de streaming de videojuegos Twitch, como juegos gratuitos y suscripciones.
+- **Twitch Prime**: Ventajas exclusivas en la plataforma de streaming de videojuegos Twitch.
 
-### 4. Alexa
+#### 4. Alexa
 
-Amazon también es pionera en el mercado de los asistentes virtuales con **Alexa**, su asistente de voz:
+Amazon también es pionera en el mercado de los asistentes virtuales con **Alexa**, su asistente de voz.
 
-- **Control de dispositivos inteligentes**: Alexa puede controlar luces, termostatos, cámaras de seguridad y otros dispositivos IoT en el hogar.
-- **Integración con Amazon Music y otros servicios de streaming**: Alexa puede reproducir música, podcasts y audiolibros con comandos de voz.
-- **Información y automatización**: Alexa proporciona información del clima, noticias, recordatorios, alarmas y mucho más.
-
-### 5. Amazon Marketplace
+#### 5. Amazon Marketplace
 
 Amazon Marketplace permite a vendedores externos ofrecer sus productos a través de la plataforma de Amazon:
 
@@ -104,16 +95,10 @@ Amazon es líder en el mercado de libros electrónicos y dispositivos de lectura
 - **Dispositivos Kindle**: Lectores electrónicos con pantallas diseñadas para una experiencia de lectura similar al papel.
 - **Kindle Unlimited**: Suscripción para acceder a una gran biblioteca de libros electrónicos de manera ilimitada.
 
----
 
-Estas son solo algunas de las principales funcionalidades que Amazon ofrece tanto a consumidores como a empresas. Cada uno de estos servicios ha ayudado a consolidar a Amazon como un líder en múltiples sectores, desde el comercio electrónico hasta la nube y la inteligencia artificial.
+## Acceso al proyecto
 
-
-
-
-
-
-
+Puede acceder al [código fuente del proyecto](https://github.com/lvidalc1/DWES)
 
 
 ## Tecnologías utilizadas
@@ -131,14 +116,15 @@ Estas son solo algunas de las principales funcionalidades que Amazon ofrece tant
 </a>
 
 
-
-
-
-
-
 ## Personas contribuyentes
-![readmeServidorContribuyentes](https://github.com/user-attachments/assets/620adc61-d6c3-4087-806f-60d9ea38c479)
+![readmeServidorContribuyentes](https://github.com/user-attachments/assets/bf4c605f-05c5-4206-8f03-eb2041106f3d)
 
+## Personas desarrolladoras
 
+<img src="https://static.vecteezy.com/system/resources/previews/002/318/271/non_2x/user-profile-icon-free-vector.jpg" width="115">
+Lucía
 
+## Licencia
+
+Amazon tiene licencia [MIT](https://es.wikipedia.org/wiki/Licencia_MIT)
 
