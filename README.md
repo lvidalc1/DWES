@@ -74,11 +74,7 @@ Amazon también es pionera en el mercado de los asistentes virtuales con **Alexa
 
 #### 5. Amazon Marketplace
 
-Amazon Marketplace permite a vendedores externos ofrecer sus productos a través de la plataforma de Amazon:
-
-- **Vender en Amazon**: Los vendedores pueden listar sus productos y llegar a millones de clientes globalmente.
-- **Logística de Amazon (FBA)**: Amazon ofrece un servicio de almacenamiento, empaquetado y envío para los productos de vendedores externos.
-- **Gestión de inventario y precios**: Herramientas para gestionar inventario, precios y promociones de forma efectiva.
+Amazon Marketplace permite a vendedores externos ofrecer sus productos a través de la plataforma de Amazon.
 
 #### 6. Amazon Fresh y Amazon Pantry
 
