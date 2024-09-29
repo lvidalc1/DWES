@@ -15,11 +15,11 @@
 
 - [Estado del proyecto](#estado-del-proyecto)
 
-- [Demostración de funciones y aplicaciones](#demostracion-de-funciones-y-aplicaciones)
+- [Demostración de funciones y aplicaciones](#demostración-de-funciones-y-aplicaciones)
 
 - [Acceso al proyecto](#acceso-al-proyecto)
   
-- [Tecnologías utilizadas](#tecnologias-utilizadas)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
 
 - [Personas contribuyentes](#personas-contribuyentes)
 
