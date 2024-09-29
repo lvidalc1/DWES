@@ -45,16 +45,14 @@ Amazon es una de las plataformas de comercio electrónico y servicios en la nube
 
 Amazon ofrece una plataforma global para la compra y venta de productos:
 
-- **Amplio catálogo de productos**: Millones de productos disponibles en diversas categorías.
-- **Compras rápidas y seguras**: Proceso de compra simplificado con múltiples opciones de pago y protección del comprador.
-- **Amazon Prime**: Una suscripción que incluye envíos rápidos y gratuitos, acceso a Prime Video, Prime Music y otros beneficios.
-- **Recomendaciones personalizadas**: Mediante algoritmos basados en el historial.
-- **Reseñas y valoraciones**: Los usuarios pueden leer y escribir reseñas de productos.
+- **Amplio catálogo de productos**.
+- **Compras rápidas y seguras**.
+- **Amazon Prime**.
+- **Recomendaciones personalizadas**.
+- **Reseñas y valoraciones**.
 
 
 #### 2. Amazon Web Services (AWS)
-
-<img src="https://www.masip.es/wp-content/uploads/2020/08/aws-logo.png" alt="aws" width="100"/>
 
 AWS ofrece una amplia gama de servicios en la nube para empresas y desarrolladores: computación, almacenamiento, bases de datos, machine learning
 
@@ -126,5 +124,5 @@ Lucía
 
 ## Licencia
 
-Amazon tiene licencia [MIT](https://es.wikipedia.org/wiki/Licencia_MIT)
+Amazon tiene licencia [MIT](https://es.wikipedia.org/wiki/Licencia_MIT).
 
