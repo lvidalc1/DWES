@@ -62,11 +62,11 @@ AWS ofrece una amplia gama de servicios en la nube para empresas y desarrollador
 
 Amazon Prime es un servicio de suscripción que proporciona varios beneficios a los usuarios:
 
-- **Envío rápido y gratuito**: Acceso a envíos en 1 o 2 días en millones de productos elegibles.
-- **Prime Video**: Plataforma de streaming con películas, series y contenido original.
-- **Prime Music**: Acceso a millones de canciones sin anuncios.
-- **Prime Reading**: Acceso a una selección de libros electrónicos, revistas y cómics sin costo adicional.
-- **Twitch Prime**: Ventajas exclusivas en la plataforma de streaming de videojuegos Twitch.
+- **Envío rápido y gratuito**.
+- **Prime Video**.
+- **Prime Music**.
+- **Prime Reading**.
+- **Twitch Prime**.
 
 #### 4. Alexa
 
@@ -78,23 +78,16 @@ Amazon Marketplace permite a vendedores externos ofrecer sus productos a través
 
 #### 6. Amazon Fresh y Amazon Pantry
 
-Servicios de Amazon dedicados a la compra de productos de supermercado:
-
-- **Amazon Fresh**: Servicio de entrega de alimentos frescos, congelados y productos del hogar.
-- **Amazon Pantry**: Plataforma que permite comprar productos de supermercado en tamaños y cantidades típicos del hogar.
+Servicios de Amazon dedicados a la compra de productos de supermercado.
 
 #### 7. Amazon Kindle
 
-Amazon es líder en el mercado de libros electrónicos y dispositivos de lectura digital:
-
-- **Kindle eBooks**: Amplio catálogo de libros electrónicos en múltiples idiomas y géneros.
-- **Dispositivos Kindle**: Lectores electrónicos con pantallas diseñadas para una experiencia de lectura similar al papel.
-- **Kindle Unlimited**: Suscripción para acceder a una gran biblioteca de libros electrónicos de manera ilimitada.
+Amazon es líder en el mercado de libros electrónicos y dispositivos de lectura digital.
 
 
 ## Acceso al proyecto
 
-Puede acceder al [código fuente del proyecto](https://github.com/lvidalc1/DWES)
+Puede acceder al [código fuente del proyecto](https://github.com/lvidalc1/DWES).
 
 
 ## Tecnologías utilizadas
