@@ -11,6 +11,8 @@
 ![Static Badge](https://img.shields.io/badge/%C3%BAltima%20versi%C3%B3n%20-%20febrero%20-%20green)
 </div>
 
+## **Índice**
+
 - [Descripción del proyecto](#descripción-del-proyecto)
 
 - [Estado del proyecto](#estado-del-proyecto)
