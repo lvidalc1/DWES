@@ -15,7 +15,7 @@ echo '<h1>'.$only_row['nombre'].'</h1>';
 echo '<h2>'.$only_row['año_publicacion'].'</h2>';
 echo '<img src="' . $only_row['url_imagen'] . '"/>'
 ?>
-<h3>Comentarios:</h3>
+<h3>Comentarios :</h3>
 <ul>
 <?php
 $query2 = 'SELECT * FROM tComentarios WHERE libro_id='.$id;
