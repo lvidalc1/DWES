@@ -50,8 +50,7 @@ INSERT INTO `tComentarios` VALUES
 /*!40000 ALTER TABLE `tComentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
-alter table tComentarios add fecha timestamp default current_timestamp;
--- 
+--
 -- Table structure for table `tLibros`
 --
 

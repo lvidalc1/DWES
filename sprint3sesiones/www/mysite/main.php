@@ -18,7 +18,7 @@ text-align: left;
 }
 img{
 width: 100px;
-heigth: 100px;
+height: 100px;
 }
 </style>
 </head>
