@@ -36,6 +36,12 @@ while ($comentario = mysqli_fetch_array($result2)) {
 <input type="submit" value="Comentar">
 </form>
 <?php
+//mostrar el enlace de logout si el usuario está logueado
+if (isset($_SESSION['id'])) {  // verificar si el usuario está logueado
+    echo '<p><a href="logout.php">Cerrar sesión</a></p>';
+} else {
+    echo '<p><a href="login.php">Iniciar sesión</a></p>';
+}
 mysqli_close($db);
 ?>
 

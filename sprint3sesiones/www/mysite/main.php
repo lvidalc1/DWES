@@ -25,6 +25,16 @@ height: 100px;
 <body>
 <?php
 
+// Verificar si el usuario está logueado y mostrar el enlace adecuado
+if (isset($_SESSION['id'])) {
+    // Si el usuario está logueado, mostrar enlace de logout
+    echo '<p><a href="logout.php">Cerrar sesión</a></p>';
+} else {
+    // Si el usuario no está logueado, mostrar enlace de login
+    echo '<p><a href="login.php">Iniciar sesión</a></p>';
+}
+
+
 // Lanzar una query
 $queryLibros = 'SELECT * FROM tLibros';
 $resultLibros = mysqli_query($db, $queryLibros) or die('Query error');
