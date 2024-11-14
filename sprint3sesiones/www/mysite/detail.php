@@ -21,12 +21,11 @@ echo '<img src="' . $only_row['url_imagen'] . '"/>'
 <?php
 $query2 = 'SELECT * FROM tComentarios WHERE libro_id='.$id;
 $result2 = mysqli_query($db, $query2) or die('Query error');
-while ($row = mysqli_fetch_array($result2)) {
-echo '<li>'.$row['comentario'].'</li>';
-echo '<p>'Fecha del comentario: '</p>'
-echo '<p>'.$row['fecha'].'</p>';
-}
-
+while ($comentario = mysqli_fetch_array($result2)) {
+    echo '<li>' . $comentario['comentario'] . '</li>';
+    echo '<p>Fecha del comentario: ';
+    echo $comentario['fecha'].'</p>';
+  }
 ?>
 </ul>
 
