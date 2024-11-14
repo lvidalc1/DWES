@@ -1,11 +1,34 @@
-<html>
-<head><meta charset="UTF-8"></head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script>
+        //función para validar el formulario antes de enviarlo
+        function validarFormulario() {
+            //obtener los valores de los campos del formulario
+            //quitar comportamiento por defecto del formulario
+            event.preventDefault();
+            var email = document.getElementsByName("f_email")[0].value;
+            var password = document.getElementsByName("f_password")[0].value;
+
+            //verificar si los campos están vacíos
+            if (email === "" || password === "") {
+                //si algún campo está vacío, mostrar una alerta
+                alert("Por favor, rellena ambos campos.");
+                return false; //evita que el formulario se envíe
+            }
+            return true; //si los campos están completos, permitir que el formulario se envíe
+        }
+        validarFormulario();
+    </script>
+</head>
 <body>
-<h1>Login</h1>
-<form action="login.php" method="post">
-<input name="f_email" type="text" placeholder="e-mail"><br>
-<input name="f_password" type="password" placeholder="Contraseña"><br>
-<input type="submit" value="Iniciar sesión">
-</form>
+    <form action="login.php" method="post" onsubmit="return validarFormulario()">
+        <input name="f_email" type="text" placeholder="e-mail"><br>
+        <input name="f_password" type="password" placeholder="Contraseña"><br>
+        <input type="submit" value="Iniciar sesión">
+    </form>
 </body>
 </html>
+
