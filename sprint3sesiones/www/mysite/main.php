@@ -20,6 +20,14 @@ img{
 width: 100px;
 height: 100px;
 }
+img:hover{
+border-radius: 10px;
+border: 2px solid blue;
+}
+td:hover{
+background-color: grey;
+transition: all 0.3s;
+}
 </style>
 </head>
 <body>
