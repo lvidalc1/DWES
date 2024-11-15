@@ -1,5 +1,6 @@
 <?php
 $db = mysqli_connect('localhost', 'root', '1234', 'mysitedb') or die('Fail');
+echo "entro en login.php";
 $email_posted = $_POST['f_email'];
 $password_posted = $_POST['f_password'];
 $query = "SELECT id, contraseña FROM tUsuarios WHERE email = '".$email_posted."'";
