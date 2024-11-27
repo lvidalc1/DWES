@@ -27,12 +27,13 @@ CREATE TABLE `tComentarios` (
   `comentario` varchar(2000) DEFAULT NULL,
   `usuario_id` int(11) DEFAULT NULL,
   `libro_id` int(11) NOT NULL,
+  `fecha` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `usuario_id` (`usuario_id`),
   KEY `libro_id` (`libro_id`),
   CONSTRAINT `tComentarios_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `tUsuarios` (`id`),
   CONSTRAINT `tComentarios_ibfk_2` FOREIGN KEY (`libro_id`) REFERENCES `tLibros` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,11 +43,24 @@ CREATE TABLE `tComentarios` (
 LOCK TABLES `tComentarios` WRITE;
 /*!40000 ALTER TABLE `tComentarios` DISABLE KEYS */;
 INSERT INTO `tComentarios` VALUES
-(1,'Una historia apasionante que me ha tenido enganchado y fascinado de principio a fin.',3,1),
-(2,'El Quijote es una obra maestra de la literatura española. Su lectura resulta muy satisfactoria gracias a sus capítulos cortos y su humor.',1,2),
-(3,'Interesante visión de la mente humana cuando escapa de nuestra concepción de cordura.',5,3),
-(4,'Libro entretenido y con un humor muy particular.',2,4),
-(5,'Es una lectura fácil, amena y adictiva. Crea misterio desde las primeras páginas y la tensión va en aumento durante toda la obra',4,5);
+(1,'Una historia apasionante que me ha tenido enganchado y fascinado de principio a fin.',3,1,NULL),
+(2,'El Quijote es una obra maestra de la literatura española. Su lectura resulta muy satisfactoria gracias a sus capítulos cortos y su humor.',1,2,NULL),
+(3,'Interesante visión de la mente humana cuando escapa de nuestra concepción de cordura.',5,3,NULL),
+(4,'Libro entretenido y con un humor muy particular.',2,4,NULL),
+(5,'Es una lectura fácil, amena y adictiva. Crea misterio desde las primeras páginas y la tensión va en aumento durante toda la obra',4,5,NULL),
+(6,'hola',NULL,1,NULL),
+(7,'si',NULL,1,NULL),
+(8,'bien',NULL,1,NULL),
+(9,'muy bueno',NULL,1,NULL),
+(10,'buen libro',NULL,1,NULL),
+(11,'comprobar',NULL,1,NULL),
+(12,'qq',NULL,1,'2024-11-14 09:37:46'),
+(13,'fantastico libro',NULL,1,'2024-11-14 09:38:05'),
+(14,'un libro increible',NULL,3,'2024-11-14 09:38:35'),
+(16,'piedra',NULL,1,'2024-11-14 10:50:23'),
+(17,'comprobar',NULL,2,'2024-11-14 10:50:57'),
+(18,'una fantástica lectura',NULL,3,'2024-11-15 07:26:35'),
+(19,'Prueba de POST al REST API',NULL,2,NULL);
 /*!40000 ALTER TABLE `tComentarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,16 +88,11 @@ CREATE TABLE `tLibros` (
 LOCK TABLES `tLibros` WRITE;
 /*!40000 ALTER TABLE `tLibros` DISABLE KEYS */;
 INSERT INTO `tLibros` VALUES
-(1,'La sombra del viento','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetadelibros.com%2Flibro-la-sombra-del-viento%2F221322&psig=AOvVaw0Th43Ad7LBF0ZT6pp9ptfA&ust=1729765721260000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDXnc2lpIkDFQAAAAAdAAAAABAE','Carlos Ruiz Zafón',2001),
-(2,'Don Quijote de la Mancha','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.es%2FQuijote-Mancha-c%25C3%25B3mic-Austral-C%25C3%25B3mic%2Fdp%2F8408270885&psig=AOvVaw2yb34yl9KMGuHr3CA7b0SX&ust=1729765938512000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOib67SmpIkDFQAAAAAdAAAAABAE','Miguel de Cervantes Saavedra',1605),
-(3,'Los renglones torcidos de Dios','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetadelibros.com%2Flibro-los-renglones-torcidos-de-dios%2F349885&psig=AOvVaw25xshiVXBYNvh1eo7jzVQH&ust=1729766038433000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiOhuWmpIkDFQAAAAAdAAAAABAE','Torcuato Luca de Tena',1979),
-(4,'La conjura de los necios','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.anagrama-ed.es%2Flibro%2Fcompactos%2Fla-conjura-de-los-necios%2F9788433920423%2FCM_38&psig=AOvVaw2O629dC-L_Vh8LwO_f5JIK&ust=1729766149421000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjv75ynpIkDFQAAAAAdAAAAABAE','John Kennedy Toole',1980),
-(5,'Diez negritos','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.casadellibro.com%2Flibro-diez-negritos%2F9788467045390%2F2575570&psig=AOvVaw2QoTJqBxZ-H39R8-FJ9SIv&ust=1729766367898000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjj94GopIkDFQAAAAAdAAAAABAE','Agatha Christie',1939),
-(6,'La sombra del viento','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetadelibros.com%2Flibro-la-sombra-del-viento%2F221322&psig=AOvVaw0Th43Ad7LBF0ZT6pp9ptfA&ust=1729765721260000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKDXnc2lpIkDFQAAAAAdAAAAABAE','Carlos Ruiz Zafón',2001),
-(7,'Don Quijote de la Mancha','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.es%2FQuijote-Mancha-c%25C3%25B3mic-Austral-C%25C3%25B3mic%2Fdp%2F8408270885&psig=AOvVaw2yb34yl9KMGuHr3CA7b0SX&ust=1729765938512000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOib67SmpIkDFQAAAAAdAAAAABAE','Miguel de Cervantes Saavedra',1605),
-(8,'Los renglones torcidos de Dios','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.planetadelibros.com%2Flibro-los-renglones-torcidos-de-dios%2F349885&psig=AOvVaw25xshiVXBYNvh1eo7jzVQH&ust=1729766038433000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiOhuWmpIkDFQAAAAAdAAAAABAE','Torcuato Luca de Tena',1979),
-(9,'La conjura de los necios','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.anagrama-ed.es%2Flibro%2Fcompactos%2Fla-conjura-de-los-necios%2F9788433920423%2FCM_38&psig=AOvVaw2O629dC-L_Vh8LwO_f5JIK&ust=1729766149421000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjv75ynpIkDFQAAAAAdAAAAABAE','John Kennedy Toole',1980),
-(10,'Diez negritos','https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.casadellibro.com%2Flibro-diez-negritos%2F9788467045390%2F2575570&psig=AOvVaw2QoTJqBxZ-H39R8-FJ9SIv&ust=1729766367898000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjj94GopIkDFQAAAAAdAAAAABAE','Agatha Christie',1939);
+(1,'La sombra del viento','https://imagessl5.casadellibro.com/a/l/s7/45/9788408043645.webp','Carlos Ruiz Zafón',2001),
+(2,'Don Quijote de la Mancha','https://m.media-amazon.com/images/I/91CIwR3QU1L._SY425_.jpg','Miguel de Cervantes Saavedra',1605),
+(3,'Los renglones torcidos de Dios','https://imagessl7.casadellibro.com/a/l/s7/97/9788408093497.webp','Torcuato Luca de Tena',1979),
+(4,'La conjura de los necios','https://www.anagrama-ed.es/uploads/media/portadas/0001/20/fe3abb0d94d574517d0160e09ce080edff62814b.jpeg','John Kennedy Toole',1980),
+(5,'Diez negritos','https://imagessl0.casadellibro.com/a/l/s7/90/9788467045390.webp','Agatha Christie',1939);
 /*!40000 ALTER TABLE `tLibros` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +111,7 @@ CREATE TABLE `tUsuarios` (
   `contraseña` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +125,10 @@ INSERT INTO `tUsuarios` VALUES
 (2,'Antonio','López López','antonioll@gmail.com','antoñito24'),
 (3,'Sara','Fernández Castro','sarafc@gmail.com','sara123'),
 (4,'Juan','Hernández Hernández','juanhh@gmail.com','juan678hernandez'),
-(5,'María','López Gómez','marialg@gmail.com','mariaa22');
+(5,'María','López Gómez','marialg@gmail.com','mariaa22'),
+(11,NULL,NULL,'paula@gmail.com','$2y$10$Kme.usekyqZG8ApRMugQiuCNN7ewecMpapDaPG4zt.W7CslAaYuo2'),
+(12,NULL,NULL,'pepe@gmail.com','$2y$10$n9TK8cHEFOx0FrOmjM6nNuaXQQTJUWvA1.fLVjjITmlU9N580Cbg6'),
+(13,NULL,NULL,'pepe2@gmail.com','$2y$10$DcjNhErnSGuPnJnP.tySp.2bZgaituxi6be522WXNR3FhCPFM41Ly');
 /*!40000 ALTER TABLE `tUsuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -129,4 +141,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-23 14:06:49
+-- Dump completed on 2024-11-27 14:59:13
