@@ -51,6 +51,7 @@ INSERT INTO `tComentarios` VALUES
 UNLOCK TABLES;
 
 alter table tComentarios add fecha timestamp default current_timestamp;
+insert into tComentarios(fecha) values (current_timestamp);
 -- 
 -- Table structure for table `tLibros`
 --
