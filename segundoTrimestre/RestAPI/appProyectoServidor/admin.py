@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
 from django.contrib import admin
 from .models import Usuario, Evento, Reserva, Comentario
 
@@ -25,3 +24,4 @@ class ReservaAdmin(admin.ModelAdmin):
 class ComentarioAdmin(admin.ModelAdmin):
     list_display = ('usuario', 'evento', 'fecha_creacion', 'texto')
     search_fields = ('usuario__nombre', 'evento__titulo')
+

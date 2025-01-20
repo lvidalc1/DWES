@@ -1,19 +1,18 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-class Usuario(models.Model):
+class Usuario(AbstractUser):
     ROL_CHOICES = [
         ('organizador', 'Organizador'),
         ('participante', 'Participante'),
     ]
     nombre = models.CharField(max_length=100)
     correo_electronico = models.EmailField(unique=True)
-    contraseña = models.CharField(max_length=100)
     biografia = models.TextField(blank=True, null=True)
     rol = models.CharField(max_length=20, choices=ROL_CHOICES)
 
     def __str__(self):
         return self.nombre
-
 
 class Evento(models.Model):
     titulo = models.CharField(max_length=200)
