@@ -34,10 +34,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appProyectoServidor',  # Tu app donde está el modelo de usuario
+    'appProyectoServidor.apps.AppproyectoservidorConfig',
 ]
 
-# Agregar el modelo de usuario personalizado
+# modelo de usuario personalizado
 AUTH_USER_MODEL = 'appProyectoServidor.Usuario'
 
 MIDDLEWARE = [
