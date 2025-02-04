@@ -3,15 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Usuario, Evento, Reserva, Comentario
 
-
-# GET: Listar todos los usuarios disponibles
-def listar_usuarios(request):
-    usuarios = Usuario.objects.all()
-    data = [{"id": u.id, "username": u.username, "email": u.email, "biografia": u.biografia, "rol": u.rol} for u in usuarios]
-    return JsonResponse(data, safe=False)
-
-
-# GET: Listar todos los eventos disponibles
+# --- Eventos ---
 def listar_eventos(request):
     eventos = Evento.objects.all()
     data = [{"id": e.id, "titulo": e.titulo, "descripcion": e.descripcion, "fecha_hora": e.fecha_hora,
@@ -20,49 +12,52 @@ def listar_eventos(request):
     return JsonResponse(data, safe=False)
 
 
-# GET: Listar todas las reservas disponibles
+# --- Reservas ---
 def listar_reservas(request):
-    reservas = Reserva.objects.all()
-    data = [{"id": r.id, "usuario": r.usuario.username, "evento": r.evento.id,
-             "entradas": r.entradas, "estado": r.estado} for r in reservas]
-    return JsonResponse(data, safe=False)
+    # Obtener el usuario_id desde los parámetros de la query string (opcional)
+    usuario_id = request.GET.get('usuario_id')
 
-
-# GET: Listar todos los comentarios disponibles
-def listar_comentarios(request):
-    comentarios = Comentario.objects.all()
-    data = [{"id": c.id, "usuario": c.usuario.username, "evento": c.evento.id,
-             "texto": c.texto, "fecha_creacion": c.fecha_creacion} for c in comentarios]
-    return JsonResponse(data, safe=False)
-
-
-@csrf_exempt
-def crear_usuario(request):
-    if request.method == "POST":
+    # Si no se proporciona usuario_id, devolver todas las reservas
+    if not usuario_id:
+        reservas = Reserva.objects.all()  # Devuelve todas las reservas
+    else:
+        # Intentar obtener el usuario correspondiente al usuario_id proporcionado
         try:
-            data = json.loads(request.body)
-            username = data.get("username")
-            email = data.get("email")
-            biografia = data.get("biografia", "")
-            rol = data.get("rol")
+            usuario = Usuario.objects.get(id=usuario_id)
+            reservas = Reserva.objects.filter(usuario=usuario)
+        except Usuario.DoesNotExist:
+            return JsonResponse({"error": "Usuario no encontrado."}, status=400)
 
-            if not all([username, email, rol]):
-                return JsonResponse({"error": "Faltan datos para crear el usuario."}, status=400)
+    # Preparar la respuesta con las reservas del usuario (o todas si no se proporcionó usuario_id)
+    data = [{"id": r.id, "evento": r.evento.id, "entradas": r.entradas, "estado": r.estado} for r in reservas]
 
-            if rol not in ['organizador', 'participante']:
-                return JsonResponse({"error": "Rol no válido."}, status=400)
+    return JsonResponse(data, safe=False)
 
-            usuario = Usuario.objects.create_user(
-                username=username,
-                email=email,
-                biografia=biografia,
-                rol=rol
-            )
 
-            return JsonResponse({"id": usuario.id, "mensaje": "Usuario creado exitosamente."}, status=201)
+# --- Comentarios ---
+def listar_comentarios(request):
+    # Obtener el evento_id desde los parámetros de la query string
+    evento_id = request.GET.get('evento_id')
 
-        except Exception as e:
-            return JsonResponse({"error": str(e)}, status=500)
+    if evento_id:  # Si se proporciona evento_id, filtrar por evento
+        try:
+            evento = Evento.objects.get(id=evento_id)
+        except Evento.DoesNotExist:
+            return JsonResponse({"error": "Evento no encontrado."}, status=404)
+
+        comentarios = Comentario.objects.filter(evento=evento)
+    else:  # Si no se proporciona evento_id, devolver todos los comentarios
+        comentarios = Comentario.objects.all()
+
+    # Si no hay comentarios, se puede devolver un mensaje vacío
+    if not comentarios.exists():
+        return JsonResponse({"mensaje": "No hay comentarios disponibles."}, status=200)
+
+    # Preparar la respuesta con los comentarios
+    data = [{"id": c.id, "usuario": c.usuario.username, "texto": c.texto, "fecha": c.fecha_creacion} for c in comentarios]
+
+
+    return JsonResponse(data, safe=False)
 
 
 @csrf_exempt
@@ -75,12 +70,11 @@ def crear_evento(request):
             fecha_hora = data.get("fecha_hora")
             capacidad = data.get("capacidad")
             pelicula = data.get("pelicula")
-            organizador_id = data.get("organizador_id")  # Se recibe el ID del organizador
+            organizador_id = data.get("organizador_id")
 
             if not all([titulo, descripcion, fecha_hora, capacidad, pelicula, organizador_id]):
                 return JsonResponse({"error": "Faltan datos para crear el evento."}, status=400)
 
-            # Buscar al organizador en la base de datos
             try:
                 organizador = Usuario.objects.get(id=organizador_id)
             except Usuario.DoesNotExist:
@@ -113,7 +107,6 @@ def crear_reserva(request):
             if not all([usuario_id, evento_id, entradas]):
                 return JsonResponse({"error": "Faltan datos para crear la reserva."}, status=400)
 
-            # Validar si los IDs existen
             try:
                 usuario = Usuario.objects.get(id=usuario_id)
                 evento = Evento.objects.get(id=evento_id)
@@ -144,7 +137,6 @@ def crear_comentario(request):
             if not all([usuario_id, evento_id, texto]):
                 return JsonResponse({"error": "Faltan datos para crear el comentario."}, status=400)
 
-            # Validar si los IDs existen
             try:
                 usuario = Usuario.objects.get(id=usuario_id)
                 evento = Evento.objects.get(id=evento_id)
@@ -161,3 +153,84 @@ def crear_comentario(request):
 
         except Exception as e:
             return JsonResponse({"error": str(e)}, status=500)
+
+
+@csrf_exempt
+def login_usuario(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Método no permitido. Usa POST.'}, status=405)
+
+    try:
+        datos = json.loads(request.body.decode('utf-8'))
+
+        username = datos.get('username')
+        password = datos.get('password')
+
+        if not username or not password:
+            return JsonResponse({'error': 'Los campos "username" y "password" son obligatorios.'}, status=400)
+
+        try:
+            usuario = Usuario.objects.get(username=username)
+        except Usuario.DoesNotExist:
+            return JsonResponse({'error': 'Credenciales inválidas. Usuario no encontrado.'}, status=401)
+
+        return JsonResponse({
+            'mensaje': 'Inicio de sesión exitoso.',
+            'usuario': {
+                'id': usuario.id,
+                'username': usuario.username,
+                'rol': usuario.rol,
+            }
+        }, status=200)
+
+    except json.JSONDecodeError:
+        return JsonResponse({'error': 'Formato de JSON inválido.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'error': f'Error inesperado: {str(e)}'}, status=500)
+
+
+@csrf_exempt
+def registrar_usuario(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Método no permitido. Usa POST.'}, status=405)
+
+    try:
+        datos = json.loads(request.body.decode('utf-8'))
+
+        username = datos.get('username')
+        password = datos.get('password')
+        rol = datos.get('rol', 'participante')
+        biografia = datos.get('biografia', '')
+
+        if not username or not password:
+            return JsonResponse({'error': 'Los campos "username" y "password" son obligatorios.'}, status=400)
+
+        if not str(password).isdigit():
+            return JsonResponse({'error': 'La contraseña debe contener únicamente números.'}, status=400)
+
+        if Usuario.objects.filter(username=username).exists():
+            return JsonResponse({'error': 'El username ya está en uso. Elige otro.'}, status=409)
+
+        nuevo_usuario = Usuario(
+            username=username,
+            rol=rol,
+            biografia=biografia
+        )
+
+        nuevo_usuario.set_password(str(password))
+        nuevo_usuario.save()
+
+        return JsonResponse({
+            'mensaje': 'Usuario registrado exitosamente.',
+            'usuario': {
+                'id': nuevo_usuario.id,
+                'username': nuevo_usuario.username,
+                'rol': nuevo_usuario.rol,
+                'biografia': nuevo_usuario.biografia
+            }
+        }, status=201)
+
+    except json.JSONDecodeError:
+        return JsonResponse({'error': 'Formato de JSON inválido.'}, status=400)
+    except Exception as e:
+        return JsonResponse({'error': f'Error inesperado: {str(e)}'}, status=500)

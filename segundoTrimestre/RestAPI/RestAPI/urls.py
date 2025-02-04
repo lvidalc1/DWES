@@ -2,16 +2,6 @@ from django.urls import path
 from appProyectoServidor import views
 
 urlpatterns = [
-    # --- Usuarios ---
-    # Endpoint para listar usuarios
-    path('usuarios/', views.listar_usuarios, name='listar_usuarios'),
-    # Endpoint para crear un usuario
-    path('usuarios/crear/', views.crear_usuario, name='crear_usuario'),
-    # Endpoint para actualizar un usuario
-    #path('usuarios/<int:usuario_id>/', views.actualizar_usuario, name='actualizar_usuario'),
-    # Endpoint para eliminar un usuario
-    #path('usuarios/<int:usuario_id>/eliminar/', views.eliminar_usuario, name='eliminar_usuario'),
-
     # --- Eventos ---
     # Endpoint para listar eventos
     path('eventos/', views.listar_eventos, name='listar_eventos'),
@@ -41,4 +31,10 @@ urlpatterns = [
     #path('comentarios/<int:comentario_id>/', views.actualizar_comentario, name='actualizar_comentario'),
     # Endpoint para eliminar un comentario
     #path('comentarios/<int:comentario_id>/eliminar/', views.eliminar_comentario, name='eliminar_comentario'),
+
+    # --- Usuarios (opcional, si decides agregar rutas más tarde) ---
+    # Endpoint para login
+    path('usuarios/login/', views.login_usuario, name='login_usuario'),
+    # Endpoint para registro
+    path('usuarios/registrar/', views.registrar_usuario, name='registrar_usuario'),
 ]
